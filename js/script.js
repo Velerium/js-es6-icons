@@ -97,6 +97,48 @@ const icons = [
 	}
 ];
 
+function filter() {
+
+	let choice = document.querySelector(`#type-select`).value
+
+	let filteredIcons = [];
+
+	switch(choice) {
+		case 'animal':
+			filteredIcons = document.querySelectorAll(`.animal`);
+			sort(filteredIcons);
+			break;
+		case 'vegetable':
+			filteredIcons = document.querySelectorAll(`.vegetable`);
+			sort(filteredIcons);
+			break;
+		case 'user':
+			filteredIcons = document.querySelectorAll(`.user`);
+			sort(filteredIcons);
+			break;
+		case 'all':
+			filteredIcons = document.querySelectorAll(`.hide`);
+			sort(filteredIcons);
+			break;
+		default:
+			filteredIcons = document.querySelectorAll(`.hide`);
+			sort(filteredIcons);
+			break;
+	}
+}
+
+function sort(filteredIcons) {
+
+	document.querySelectorAll(`.hide`).forEach ((icon) => {
+		icon.style.display = "none";
+	})
+
+	filteredIcons.forEach ((icon) => {
+		icon.style.display = "block"; 
+	});
+}
+
+
 let content = document.querySelector(`.content`)
 
 icons.forEach((icon) => {
@@ -104,11 +146,14 @@ icons.forEach((icon) => {
 	let {name, prefix, type, family} = icon;
 
     content.innerHTML += `
-        <div>
-            <div>
-                <div class="${family} ${prefix}${name} ${type}"></div><br>
-                <div class="icon"> ${name} </div>
-            </div>
-        </div>
+		<div class="hide ${type}">
+			<div class="flex">
+				<div class="${family} ${prefix}${name}"></div>
+				<div class="icon black"> ${name} </div>
+			</div>
+		</div>
         `
 })
+
+filter();
+	

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;
 }
 
 .container {
@@ -26,6 +27,10 @@
     font-size: 14px;
 }
 
+.black {
+    color: black;
+}
+
 .user {
     color: #800080;
 }
@@ -38,25 +43,41 @@
     color: #ffa500;
 }
 
-.content {
+.color {
+    height: 640px;
     background-color: #ddd;
+}
+
+.content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
 }
 
-.content > div {
-    width: 20%;
-    height: 120px;
+.hide {
+    width: 18%;
+    height: 90px;
     text-align: center;
     margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #666;
+}
+
+.padding{
+    padding: 10px;
 }
 
 .content .fas {
     font-size: 32px;
     margin-bottom: 5px;
+}
+
+.flex {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
