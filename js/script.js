@@ -100,11 +100,14 @@ const icons = [
 let content = document.querySelector(`.content`)
 
 icons.forEach((icon) => {
+
+	let {name, prefix, type, family} = icon;
+
     content.innerHTML += `
         <div>
             <div>
-                <div class="${icon.family} ${icon.prefix}${icon.name}"></div><br>
-                <div class="icon"> ${icon.name} </div>
+                <div class="${family} ${prefix}${name} ${type}"></div><br>
+                <div class="icon"> ${name} </div>
             </div>
         </div>
         `

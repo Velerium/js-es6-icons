@@ -26,6 +26,18 @@
     font-size: 14px;
 }
 
+.user {
+    color: #800080;
+}
+
+.animal {
+    color: #0000ff;
+}
+
+.vegetable {
+    color: #ffa500;
+}
+
 .content {
     background-color: #ddd;
     display: flex;
