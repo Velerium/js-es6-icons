@@ -103,27 +103,12 @@ function filter() {
 
 	let filteredIcons = [];
 
-	switch(choice) {
-		case 'animal':
-			filteredIcons = document.querySelectorAll(`.animal`);
-			sort(filteredIcons);
-			break;
-		case 'vegetable':
-			filteredIcons = document.querySelectorAll(`.vegetable`);
-			sort(filteredIcons);
-			break;
-		case 'user':
-			filteredIcons = document.querySelectorAll(`.user`);
-			sort(filteredIcons);
-			break;
-		case 'all':
-			filteredIcons = document.querySelectorAll(`.hide`);
-			sort(filteredIcons);
-			break;
-		default:
-			filteredIcons = document.querySelectorAll(`.hide`);
-			sort(filteredIcons);
-			break;
+	if(choice === `all`) {
+		filteredIcons = document.querySelectorAll(`.hide`);
+		sort(filteredIcons);
+	} else {
+		filteredIcons = document.querySelectorAll(`.${choice}`);
+		sort(filteredIcons);
 	}
 }
 
@@ -156,4 +141,5 @@ icons.forEach((icon) => {
 })
 
 filter();
+document.querySelector(`#type-select`).addEventListener(`change`, filter);
 	
